@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 
 const Container = styled.div`
@@ -18,7 +17,7 @@ const Text = styled.textarea`
     line-height: 150%;
     font-family: Inter;
     width: 577px;
-    height: 80%;
+    height: 350px;
     background: none;
     outline: none;
     border: none;
@@ -29,9 +28,7 @@ const Text = styled.textarea`
     
 `
 
-const Input = () =>{
-
-    const [text, setText] = useState("");
+const Input = ({handleChange, text}) =>{
 
     
     return <Container>
@@ -39,7 +36,7 @@ const Input = () =>{
             type="text" 
             placeholder="Ingrese el texto aqui"
             value={text}
-            onChange={(e)=> setText(e.target.value)}></Text>
+            onChange={handleChange}></Text>
     </Container>
 }
 
