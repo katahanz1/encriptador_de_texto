@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const Boton = styled.button`
   border-radius: 24px;
@@ -28,43 +27,11 @@ const Cont = styled.div`
   top: 500px;
 `
 
-const Container = ({text}) => {
 
-  const [palabraEncriptada, setPalabraEncriptada] = useState("")
-  const encript = () =>{
+const Container = ({encript}) => {
 
-    let palabra = "";
-    for(let i = 0; i < text.length; i++)
-    {
-      if(text[i] === "e")
-      {
-        palabra += "enter"
-      }else if(text[i] === "i")
-      {
-        palabra += "imes"
-      }
-      else if(text[i] === "a")
-      {
-        palabra += "ai"
-      }else if(text[i] === "o")
-      {
-        palabra += "ober"
-      }else if(text[i] === "u")
-      {
-        palabra += "ufat"
-      }else{
-        palabra+=text[i]
-      }
-      setPalabraEncriptada(palabra)
-    }
-
-    console.log(palabra)
-    
-  }
-
-  
   return <Cont>
-    <Boton encripta onClick={encript}>Encripta</Boton>
+    <Boton encripta={true} onClick={encript}>Encripta</Boton>
     <Boton >Desencripta</Boton>
     </Cont>
 }
